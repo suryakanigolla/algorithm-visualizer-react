@@ -15,8 +15,3 @@ yarn install
 yarn start
 ```
 
-<br>
-
-## LICENSE
-
-[MIT]('./LICENSE.md')
