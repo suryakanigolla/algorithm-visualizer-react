@@ -1,0 +1,13 @@
+.Grid  {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    height: auto;
+    margin: 0 auto;
+}
+
+.Grid__Row {
+    display: flex;
+    justify-content: center;
+}
+

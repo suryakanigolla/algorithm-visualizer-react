@@ -1,15 +1,13 @@
-import React from 'react';
-import { Provider } from 'Provider';
-import Container from 'components/Container/Container';
-import 'reset-css';
-import './App.scss';
+import { Component } from 'react';
+import './App.css';
+import PathFinding from "./components/organisms/PathFinding"
+import {Provider} from "./Provider";
 
-const App = () => {
-  return (
-    <Provider>
-      <Container />
-    </Provider>
-  );
-};
-
+class App extends Component {
+  render() {
+      return(
+        <div></div>
+      )
+  }
+}
 export default App;
