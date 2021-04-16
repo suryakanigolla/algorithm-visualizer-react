@@ -1,18 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "./Provider";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import PathFinding from "./components/organisms/PathFinding"
+import Sorting from "./components/organisms/Sorting"
+import "../src/assets/scss/main.scss";
+
 
 const routing = (
   <Router>
     <Provider>
       <Route exact path="/" component={App}></Route>
       <Route path="/pathfinding" component={PathFinding}></Route>
-      {/* <Route path="/sorting" component={Sorting}></Route> */}
+      <Route path="/sorting" component={Sorting}></Route>
     </Provider>
   </Router>
 );

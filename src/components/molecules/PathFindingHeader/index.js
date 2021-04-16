@@ -15,7 +15,7 @@ import { Context } from "../../../Provider";
 import PathFinder from "../../../helpers/algorithms/index";
 import Button from "../../atoms/Button";
 import { FaPause, FaPlay } from "react-icons/fa";
-import "./style.css";
+import "./style.scss";
 
 const PathFindingHeader = () => {
   const [type, setType] = useState(DIJKSTRA);
@@ -121,26 +121,22 @@ const PathFindingHeader = () => {
         onClick={onVisualize}
         disabled={isVisualized}
         type="button"
-        text="Visualize"
-      ></Button>
+      >Visualize</Button>
       <Button
         onClick={onClearAll}
         disabled={isVisualized && !pause}
         type="button"
-        text="Clear All"
-      ></Button>
+      >Clear All</Button>
       <Button
         onClick={onClearPath}
         disabled={isVisualized && !pause}
         type="button"
-        text="Clear Path"
-      ></Button>
+      >Clear Path</Button>
       <Button
         onClick={onPause}
         disabled={!isVisualized}
         type="button"
-        text={pause ? <FaPlay /> : <FaPause />}
-      ></Button>
+      >{pause ? <FaPlay /> : <FaPause />}</Button>
     </div>
   );
 };

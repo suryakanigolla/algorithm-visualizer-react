@@ -12,7 +12,7 @@ import {
   NODE_SHORTEST,
   SHORTEST_COLOR,
 } from "../../../helpers/constants.js";
-import "./style.css";
+import "./style.scss";
 
 const Node = ({ ridx, cidx }) => {
   const [type, setType] = useState(NODE_INITIAL);
