@@ -9,7 +9,7 @@
   line-height: 2.25rem;
   font-weight: 500;
   text-decoration: none;
-  border: none;
+  border: 1px solid black;
   outline: none;
   text-transform: uppercase;
 }
@@ -25,12 +25,4 @@
     &:hover {
         background-color: white;
     }
-}
-
-
-
-@media only screen and (max-width: 820px) {
-  .Button {
-    margin-bottom: 10px;
-  }
 }

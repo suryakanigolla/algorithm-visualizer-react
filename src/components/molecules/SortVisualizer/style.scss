@@ -1,18 +1,12 @@
-.sort-visual {
-  width: auto;
-  padding: 0.5rem;
-  margin: 1rem 1rem;
-  background-color: var(--background-color-2);
-
-  &__controls {
+.Sort-Visual {
+  &__Controls {
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    &__main {
+    justify-content: center;
+    & div {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: space-between;
     }
   }
 }

@@ -19,14 +19,12 @@ const AppControls = ({
 
   return (
     <Fragment>
-      <div className="AppControls__Size">
-        <span>Algorithm</span>
+      <div className="AppControls__Select">
         <select
-          className="PathFindingHeader__Select PathFindingHeader__Item"
           onChange={(e) => handleAlgoChange(e)}
           defaultValue={algorithm}
         >
-          <option value="Bubble Sort">Bubble Sort</option>
+          <option value="Bubble Sort" defaultChecked>Bubble Sort</option>
           <option value="Selection Sort">Selection Sort</option>
           <option value="Insertion Sort">Insertion Sort</option>
           <option value="Merge Sort">Merge Sort</option>
@@ -37,10 +35,8 @@ const AppControls = ({
         </select>
       </div>
 
-      <div className="AppControls__Size">
-        <span>Size</span>
+      <div className="AppControls__Select">
         <select
-          className="PathFindingHeader__Select PathFindingHeader__Item"
           onChange={(e) => handleSizeChange(e)}
           defaultValue={String(arraySize)}
         >

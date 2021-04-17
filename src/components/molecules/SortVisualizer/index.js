@@ -95,10 +95,10 @@ class SortVisualizer extends Component {
     this.run(trace);
   };
 
-  adjustPlaybackSpeed = (speed) => {
+  adjustPlaybackSpeed = (e) => {
     const playing = this.state.timeoutIds.length > 0;
     this.pause();
-    const playbackSpeed = Number(speed.split("x")[0]);
+    const playbackSpeed = Number(e.target.value.split("x")[0]);
     this.setState({ playbackSpeed }, () => {
       if (playing) this.continue();
     });
@@ -106,12 +106,12 @@ class SortVisualizer extends Component {
 
   render() {
     return (
-      <div className="sort-visual">
-        <div className="sort-visual__controls">
-          <div className="sort-visual__controls__main">
+      <div className="Sort-Visual">
+        <div className="Sort-Visual__Controls">
+          <div>
             {this.props.children}
           </div>
-          <div className="sort-visual__controls__flow">
+          <div>
             <VisualizerControls
               onPlay={
                 this.state.traceStep === -1

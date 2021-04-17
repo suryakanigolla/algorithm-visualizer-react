@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./style.scss";
+import "./style.scss";
 
 import AppControls from "../../molecules/AppControls";
 import SortVisualizer from "../../molecules/SortVisualizer";
@@ -39,7 +39,7 @@ class Sorting extends Component {
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max)) + 1;
     }
-    console.log(this.state.arraySize)
+    console.log(this.state.arraySize);
     const array = Array(this.state.arraySize)
       .fill(0)
       .map(() => getRandomInt(this.state.arraySize * 5));
@@ -85,8 +85,9 @@ class Sorting extends Component {
     );
 
     return (
-      <div className="App">
-        <main className="App__Body">
+      <div className="Sorting">
+        <main className="Sorting__Body">
+          <h2 className="Sorting__Title">Sorting Visualization</h2>
           <SortVisualizer array={this.state.array} trace={this.state.trace}>
             {controls}
           </SortVisualizer>

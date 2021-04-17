@@ -33,7 +33,6 @@ const PathFindingHeader = () => {
     isVisualized,
     setIsPathExist,
     setIsVisualized,
-    setIsHelped,
   } = context;
 
   const onAlgoChange = (e) => {
@@ -85,10 +84,6 @@ const PathFindingHeader = () => {
     }
   };
 
-  const onHelp = () => {
-    setIsHelped(true);
-  };
-
   return (
     <div className="PathFindingHeader">
       <select
@@ -117,26 +112,26 @@ const PathFindingHeader = () => {
         <option value={DELAY_FAST}>fast</option>
         <option value={DELAY_FASTEST}>fastest</option>
       </select>
-      <Button
-        onClick={onVisualize}
-        disabled={isVisualized}
-        type="button"
-      >Visualize</Button>
+      <Button onClick={onVisualize} disabled={isVisualized} type="button">
+        Visualize
+      </Button>
       <Button
         onClick={onClearAll}
         disabled={isVisualized && !pause}
         type="button"
-      >Clear All</Button>
+      >
+        Clear All
+      </Button>
       <Button
         onClick={onClearPath}
         disabled={isVisualized && !pause}
         type="button"
-      >Clear Path</Button>
-      <Button
-        onClick={onPause}
-        disabled={!isVisualized}
-        type="button"
-      >{pause ? <FaPlay /> : <FaPause />}</Button>
+      >
+        Clear Path
+      </Button>
+      <Button onClick={onPause} disabled={!isVisualized} type="button">
+        {pause ? <FaPlay /> : <FaPause />}
+      </Button>
     </div>
   );
 };

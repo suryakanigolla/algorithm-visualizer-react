@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
-export var BOARD_ROW = Number("16");
-export var BOARD_COL = Number("20");
+export var BOARD_ROW = Number("15");
+export var BOARD_COL = Number("15");
 
 if (window.innerWidth < 430) {
   BOARD_ROW = 6;
@@ -9,7 +9,7 @@ if (window.innerWidth < 430) {
 }
 else if (window.innerWidth < 610) {
   BOARD_ROW = 10;
-  BOARD_COL = 10
+  BOARD_COL = 10;
 }
 else if (window.innerWidth < 820) {
   BOARD_ROW = 15

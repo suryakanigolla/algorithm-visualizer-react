@@ -6,4 +6,5 @@
     transition: background-color 0.3s ease-out;
     width: calc(calc(calc(100vh - (10vh + 9vh + 10vh)) / 16) - 5px);
     height: calc(calc(calc(100vh - (10vh + 9vh + 10vh)) / 16) - 5px);
+    user-select: none;
 }
