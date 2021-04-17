@@ -15,7 +15,7 @@ import { Context } from "../../../Provider";
 import PathFinder from "../../../helpers/algorithms/index";
 import Button from "../../atoms/Button";
 import { FaPause, FaPlay } from "react-icons/fa";
-import "./style.css";
+import "./style.scss";
 
 const PathFindingHeader = () => {
   const [type, setType] = useState(DIJKSTRA);
@@ -33,7 +33,6 @@ const PathFindingHeader = () => {
     isVisualized,
     setIsPathExist,
     setIsVisualized,
-    setIsHelped,
   } = context;
 
   const onAlgoChange = (e) => {
@@ -85,10 +84,6 @@ const PathFindingHeader = () => {
     }
   };
 
-  const onHelp = () => {
-    setIsHelped(true);
-  };
-
   return (
     <div className="PathFindingHeader">
       <select
@@ -117,30 +112,26 @@ const PathFindingHeader = () => {
         <option value={DELAY_FAST}>fast</option>
         <option value={DELAY_FASTEST}>fastest</option>
       </select>
-      <Button
-        onClick={onVisualize}
-        disabled={isVisualized}
-        type="button"
-        text="Visualize"
-      ></Button>
+      <Button onClick={onVisualize} disabled={isVisualized} type="button">
+        Visualize
+      </Button>
       <Button
         onClick={onClearAll}
         disabled={isVisualized && !pause}
         type="button"
-        text="Clear All"
-      ></Button>
+      >
+        Clear All
+      </Button>
       <Button
         onClick={onClearPath}
         disabled={isVisualized && !pause}
         type="button"
-        text="Clear Path"
-      ></Button>
-      <Button
-        onClick={onPause}
-        disabled={!isVisualized}
-        type="button"
-        text={pause ? <FaPlay /> : <FaPause />}
-      ></Button>
+      >
+        Clear Path
+      </Button>
+      <Button onClick={onPause} disabled={!isVisualized} type="button">
+        {pause ? <FaPlay /> : <FaPause />}
+      </Button>
     </div>
   );
 };

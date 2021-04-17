@@ -1,0 +1,12 @@
+@import "../../../assets/scss/global/mixins";
+.AppControls {
+    &__Select {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        & select {
+            @include dropDownStyle;
+            width: 120px;
+        }
+    }
+}

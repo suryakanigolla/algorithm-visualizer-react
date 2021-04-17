@@ -7,7 +7,7 @@ import {
   NODE_INITIAL,
 } from "../../../helpers/constants.js";
 import Node from "../../atoms/Node";
-import "./style.css";
+import "./style.scss";
 
 const Grid = () => {
   const context = useContext(Context);

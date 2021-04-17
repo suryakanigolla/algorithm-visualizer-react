@@ -1,0 +1,34 @@
+:root {
+  --color-background: rgb(30, 31, 31);
+  --color-disabled: rgba(0, 0, 0, 0.37);
+  --color-yellow: rgb(252, 186, 3);
+  --color-blue: rgb(117, 225, 255);
+  --color-dark-pink: rgb(207, 37, 65);
+  --button-disabled-ink-color: rgba(0, 0, 0, 0.37);
+  --primary: #66bb6a;
+  --primary-light: #98ee99;
+  --primary-dark: #338a3e;
+  --secondary: #f06292;
+  --secondary-light: #ff94c2;
+  --secondary-dark: #ba2d65;
+  --blue: #42a5f5;
+  --blue-light: #80d6ff;
+  --blue-dark: #0077c2;
+  --red: #ef5350;
+  --red-light: #ff867c;
+  --red-dark: #ff867c;
+  --yellow: #ffee58;
+  --yellow-light: #ffff8b;
+  --yellow-dark: #c9bc1f;
+  --amber: #ffd54f;
+  --amber-light: #ffff81;
+  --amber-dark: #c8a415;
+  --white: rgba(255, 255, 255, 0.87);
+  --gray-300: rgb(199, 199, 204);
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+@import "global/mixins";
+@import "global/normalize";
+@import "global/base";

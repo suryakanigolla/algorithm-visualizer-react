@@ -1,8 +1,8 @@
-import './style.css';
+import './style.scss';
 
-const Button = ({onClick,text}) => {
+const Button = ({onClick,children, disabled}) => {
     return(
-        <button onClick={onClick} className="Button">{text}</button>
+        <button onClick={onClick} disabled={disabled} className="Button">{children}</button>
     )
 }
 

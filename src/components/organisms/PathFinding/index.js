@@ -1,27 +1,48 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import PathFindingHeader from "../../molecules/PathFindingHeader";
 import Grid from "../../molecules/Grid";
 import { Context } from "../../../Provider";
-import "./style.css";
+import { pathfindingdefs } from "../../../helpers/descriptions/pathfindingdef";
+import "./style.scss";
 
 const PathFinding = () => {
   const context = useContext(Context);
-  const { isPathExist, clear, isHelped, setIsHelped } = context;
-  const [isErrorOpen, setIsErrorOpen] = useState(false);
+  const { isPathExist, clear } = context;
+  console.log(pathfindingdefs);
 
   useEffect(() => {
     if (!isPathExist) {
       clear();
-      setIsErrorOpen(true);
     }
   }, [isPathExist, clear]);
 
-  const onErrorClose = () => {
-    setIsErrorOpen(false);
+  const ColorCode = ({ color, text }) => {
+    return (
+      <div className="ColourCodes__Item">
+        <div style={{ backgroundColor: color }}></div>
+        <p>{text}</p>
+      </div>
+    );
   };
-  const onHelpClose = () => {
-    setIsHelped(false);
-  };
+
+  const colors = [
+    {
+      color: "black",
+      text: "End Points",
+    },
+    {
+      color: "rgb(252, 186, 3)",
+      text: "Wall",
+    },
+    {
+      color: "rgb(117, 225, 255)",
+      text: "Algorithm Path",
+    },
+    {
+      color: "rgb(207, 37, 65)",
+      text: "Solved Path",
+    },
+  ];
 
   return (
     <>
@@ -31,24 +52,13 @@ const PathFinding = () => {
           <PathFindingHeader />
           <Grid />
         </div>
-        <div className="PathFinding__Legend">
-          <h2 className="PathFinding__Legend__Title">Colour Codes</h2>
-          <div className="PathFinding__Legend__ColourCodes">
-            <div className="ColourCodes__Item">
-              <div className="ColourCodes__Item__Colour Black"></div>
-              <p className="ColourCodes__Item__Meaning">End Points</p>
-            </div>
-            <div className="ColourCodes__Item">
-              <div className="ColourCodes__Item__Colour Yellow"></div>
-              <p className="ColourCodes__Item__Meaning">Wall</p>
-            </div>
-            <div className="ColourCodes__Item">
-              <div className="ColourCodes__Item__Colour Blue"></div>
-              <p className="ColourCodes__Item__Meaning">Algorithm Path</p>
-            </div>
-            <div className="ColourCodes__Item">
-              <div className="ColourCodes__Item__Colour Red"></div>
-              <p className="ColourCodes__Item__Meaning">Solved Path</p>
+        <div className="PathFinding__Extra">
+          <div className="PathFinding__Extra__Legend">
+            <h2 className="PathFinding__Extra__Legend__Title">Colour Codes</h2>
+            <div className="PathFinding__Extra__Legend__ColourCodes">
+              {colors.map((item, index) => (
+                <ColorCode key={index} color={item.color} text={item.text} />
+              ))}
             </div>
           </div>
         </div>
