@@ -3,6 +3,8 @@ import PathFindingHeader from "../../molecules/PathFindingHeader";
 import Grid from "../../molecules/Grid";
 import { Context } from "../../../Provider";
 import { pathfindingdefs } from "../../../helpers/descriptions/pathfindingdef";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import "./style.scss";
 
 const PathFinding = () => {
@@ -60,6 +62,33 @@ const PathFinding = () => {
                 <ColorCode key={index} color={item.color} text={item.text} />
               ))}
             </div>
+          </div>
+          <div className="PathFinding__Extra__Description">
+            <Tabs>
+              <TabList>
+                {pathfindingdefs.map((item, index) => (
+                  <Tab key={index}>{item.name}</Tab>
+                ))}
+              </TabList>
+              {pathfindingdefs.map((item, index) => (
+                <TabPanel key={index}>
+                  <div className="PathFinding__Extra__Description__Item">
+                    <h2>{item.name}</h2>
+                    <div>
+                      <p>{item.desc}</p>
+                    </div>
+                    <div>
+                      {Object.keys(item.performance).map((key, index) => (
+                        <p key={index} style={{marginBottom: "0px"}}>
+                          <span>{key}: </span>
+                          <span>{item.performance[key]}</span>
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </TabPanel>
+              ))}
+            </Tabs>
           </div>
         </div>
       </div>

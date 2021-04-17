@@ -6,6 +6,7 @@
   @media (min-width: 1030px) {
     display: flex;
     gap: 20px;
+    overflow: hidden;
   }
 }
 
@@ -20,7 +21,7 @@
   margin: 30px auto;
   &__Title {
     margin-bottom: 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     @media (min-width: 900px) {
       font-size: 1.6rem;
     }
@@ -40,6 +41,18 @@
         @media (min-width: 610px) {
           display: flex;
         }
+      }
+    }
+    &__Description {
+      background-color: white;
+      padding: 20px;
+      &__Item {
+        background-color: black;
+        padding: 20px;
+        height: 350px;
+        color: white;
+        text-transform: none;
+        overflow-y: auto;
       }
     }
   }

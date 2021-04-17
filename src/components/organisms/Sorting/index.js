@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./style.scss";
 
 import AppControls from "../../molecules/AppControls";
 import SortVisualizer from "../../molecules/SortVisualizer";
@@ -11,6 +10,39 @@ import QuickSort from "../../../helpers/algorithms/QuickSort";
 import QuickSort3 from "../../../helpers/algorithms/QuickSort3";
 import HeapSort from "../../../helpers/algorithms/HeapSort";
 import ShellSort from "../../../helpers/algorithms/ShellSort";
+import { sortingdef } from "../../../helpers/descriptions/sortingdef";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import "./style.scss";
+
+const ColorCode = ({ color, text }) => {
+  return (
+    <div className="ColourCodes__Item">
+      <div style={{ backgroundColor: color }}></div>
+      <p>{text}</p>
+    </div>
+  );
+};
+
+const colors = [
+  {
+    color: "#66bb6a",
+    text: "Sorted",
+  },
+  {
+    color: "#ffd54f",
+    text: "Comparing",
+  },
+  {
+    color: "#f06292",
+    text: "Swapping",
+  },
+  {
+    color: "#ef5350",
+    text: "Overwritten",
+  },
+];
+
 
 class Sorting extends Component {
   state = {
@@ -86,12 +118,49 @@ class Sorting extends Component {
 
     return (
       <div className="Sorting">
-        <main className="Sorting__Body">
+        <div className="Sorting__Body">
           <h2 className="Sorting__Title">Sorting Visualization</h2>
           <SortVisualizer array={this.state.array} trace={this.state.trace}>
             {controls}
           </SortVisualizer>
-        </main>
+        </div>
+        <div className="Sorting__Extra">
+          <div className="Sorting__Extra__Legend">
+            <h2 className="Sorting__Extra__Legend__Title">Colour Codes</h2>
+            <div className="Sorting__Extra__Legend__ColourCodes">
+              {colors.map((item, index) => (
+                <ColorCode key={index} color={item.color} text={item.text} />
+              ))}
+            </div>
+          </div>
+          <div className="Sorting__Extra__Description">
+            <Tabs>
+              <TabList>
+                {sortingdef.map((item, index) => (
+                  <Tab key={index}>{item.name}</Tab>
+                ))}
+              </TabList>
+              {sortingdef.map((item, index) => (
+                <TabPanel key={index}>
+                  <div className="Sorting__Extra__Description__Item">
+                    <h2>{item.name}</h2>
+                    <div>
+                      <p>{item.desc}</p>
+                    </div>
+                    <div>
+                      {Object.keys(item.performance).map((key, index) => (
+                        <p key={index} style={{marginBottom: "0px"}}>
+                          <span>{key}: </span>
+                          <span>{item.performance[key]}</span>
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </TabPanel>
+              ))}
+            </Tabs>
+          </div>
+        </div>
       </div>
     );
   }

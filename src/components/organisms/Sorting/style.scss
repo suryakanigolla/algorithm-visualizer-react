@@ -1,16 +1,69 @@
 .Sorting {
+  min-height: 100vh;
+  overflow: scroll;
+  padding: 20px;
+  background-color: var(--color-background);
+  @media (min-width: 1030px) {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--color-background);
-    &__Title {
-        margin-bottom: 10px;
+    gap: 20px;
+    overflow: hidden;
+  }
+  &__Title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  &__Body {
+    max-width: 680px;
+    background-color: white;
+    padding: 30px;
+    margin: 30px auto;
+  }
+  &__Extra {
+    max-width: 620px;
+    margin: auto;
+    &__Legend {
+      background-color: white;
+      padding: 20px 0px;
+      &__Title {
         text-align: center;
+        margin-top: 20px;
+      }
+      &__ColourCodes {
+        margin-left: 20px;
+        @media (min-width: 640px) {
+          display: flex;
+          padding: 10px;
+          margin: 0px;
+          gap: 10px;
+        }
+      }
     }
-    &__Body {
-        max-width: 680px;
-        background-color: white;
-        padding: 30px;
+    &__Description {
+      background-color: white;
+      padding: 20px;
+      &__Item {
+        background-color: black;
+        padding: 20px;
+        height: 350px;
+        color: white;
+        text-transform: none;
+        overflow-y: auto;
+      }
     }
+  }
+}
+
+.ColourCodes__Item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  & div {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  & p {
+    margin-bottom: 0px;
+  }
 }
