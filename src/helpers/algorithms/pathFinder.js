@@ -1,5 +1,4 @@
 import { BOARD_ROW, BOARD_COL, NODE_SHORTEST } from '../constants.js';
-import Timer from './Timer';
 
 export default class PathFinder {
   begin;
