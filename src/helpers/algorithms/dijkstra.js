@@ -25,7 +25,6 @@ export default class Dijkstra extends PathFinder {
 
     pq.enq({ x: begin.x, y: begin.y, d: 0 });
     let find = false;
-    console.log(pq)
     while (pq.size()) {
       const current = pq.peek();
       pq.deq();

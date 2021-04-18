@@ -2,7 +2,17 @@
   min-height: 100vh;
   overflow: scroll;
   padding: 20px;
-  background-color: var(--color-background);
+  position: relative;
+  &__Bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-size: cover;
+    min-height: 100%;
+    z-index: -1;
+    background-color: var(--color-background);
+  }
   @media (min-width: 1030px) {
     display: flex;
     gap: 20px;

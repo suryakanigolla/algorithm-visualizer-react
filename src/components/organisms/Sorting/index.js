@@ -12,6 +12,8 @@ import HeapSort from "../../../helpers/algorithms/HeapSort";
 import ShellSort from "../../../helpers/algorithms/ShellSort";
 import { sortingdef } from "../../../helpers/descriptions/sortingdef";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import Particles from "react-particles-js"
+import {particleConfig} from "../../../helpers/particlesjs-config"
 import "react-tabs/style/react-tabs.css";
 import "./style.scss";
 
@@ -71,7 +73,6 @@ class Sorting extends Component {
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max)) + 1;
     }
-    console.log(this.state.arraySize);
     const array = Array(this.state.arraySize)
       .fill(0)
       .map(() => getRandomInt(this.state.arraySize * 5));
@@ -118,6 +119,9 @@ class Sorting extends Component {
 
     return (
       <div className="Sorting">
+        <div className="Sorting__Bg">
+          <Particles params={particleConfig} />
+        </div>
         <div className="Sorting__Body">
           <h2 className="Sorting__Title">Sorting Visualization</h2>
           <SortVisualizer array={this.state.array} trace={this.state.trace}>

@@ -4,13 +4,14 @@ import Grid from "../../molecules/Grid";
 import { Context } from "../../../Provider";
 import { pathfindingdefs } from "../../../helpers/descriptions/pathfindingdef";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import Particles from "react-particles-js"
+import {particleConfig} from "../../../helpers/particlesjs-config"
 import "react-tabs/style/react-tabs.css";
 import "./style.scss";
 
 const PathFinding = () => {
   const context = useContext(Context);
   const { isPathExist, clear } = context;
-  console.log(pathfindingdefs);
 
   useEffect(() => {
     if (!isPathExist) {
@@ -49,6 +50,9 @@ const PathFinding = () => {
   return (
     <>
       <div className="PathFinding__Container">
+        <div className="PathFinding__Bg">
+          <Particles params={particleConfig} />
+        </div>
         <div className="PathFinding">
           <h2 className="PathFinding__Title">PathFinding Visualization</h2>
           <PathFindingHeader />
@@ -79,7 +83,7 @@ const PathFinding = () => {
                     </div>
                     <div>
                       {Object.keys(item.performance).map((key, index) => (
-                        <p key={index} style={{marginBottom: "0px"}}>
+                        <p key={index} style={{ marginBottom: "0px" }}>
                           <span>{key}: </span>
                           <span>{item.performance[key]}</span>
                         </p>

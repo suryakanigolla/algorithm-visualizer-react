@@ -24,7 +24,6 @@ export default class AStar extends PathFinder {
     pq.queue({ x: begin.x, y: begin.y, f: fBegin });
     dist[begin.x][begin.y] = 0;
     opened[begin.x][begin.y] = true;
-    console.log(this.opened);
 
     let find = false;
     let timeFactor = 1;
