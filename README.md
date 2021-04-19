@@ -2,6 +2,8 @@
 
 An algorithm visualization app made using React, Sass. Bootstrapped with Create-React-app
 
+Deployed in Heroku: https://algorithm-visual-react.herokuapp.com/
+
 ## Features
 
 - Can visualize sorting algorithms like merge sort, insertion sort etc
