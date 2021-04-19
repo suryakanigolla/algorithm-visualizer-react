@@ -22,9 +22,9 @@ const AppControls = ({
       <div className="AppControls__Select">
         <select
           onChange={(e) => handleAlgoChange(e)}
-          defaultValue={algorithm}
         >
-          <option value="Bubble Sort" defaultChecked>Bubble Sort</option>
+          <option selected="true" disabled="disabled" defaultChecked>Algorithm</option>    
+          <option value="Bubble Sort" >Bubble Sort</option>
           <option value="Selection Sort">Selection Sort</option>
           <option value="Insertion Sort">Insertion Sort</option>
           <option value="Merge Sort">Merge Sort</option>

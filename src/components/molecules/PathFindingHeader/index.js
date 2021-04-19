@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import {
   DIJKSTRA,
   BELLMAN_FORD,
-  A_STAR,
   DFS,
   BFS,
   DELAY_SLOWEST,
