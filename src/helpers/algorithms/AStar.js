@@ -1,18 +1,18 @@
-import PriorityQueue from 'js-priority-queue';
+import PriorityQueue from "priorityqueuejs";
 import { BOARD_ROW, BOARD_COL, NODE_CLICKED, NODE_VISITED } from '../constants.js';
 import PathFinder from './pathFinder';
 
 export default class AStar extends PathFinder {
   opened;
-
   constructor(args) {
     super(args);
     this.opened = new Array(BOARD_ROW);
     for (let i = 0; i < BOARD_ROW; i++) {
       this.opened[i] = new Array(BOARD_COL).fill(false);
     }
-    this.pq = new PriorityQueue<Object>({ comparator: (a, b) => a.f - b.f });
-  }
+    this.pq = new PriorityQueue(function (a, b) {
+      return a.d - b.d;
+    });  }
 
   _h = (start) => {
     return Math.abs(start.x - this.end.x) + Math.abs(start.y - this.end.y);
@@ -21,7 +21,7 @@ export default class AStar extends PathFinder {
   execute = () => {
     const { dist, pq, opened, board, updateItem, prev, begin, _h, end } = this;
     const fBegin = _h(begin);
-    pq.queue({ x: begin.x, y: begin.y, f: fBegin });
+    pq.enq({ x: begin.x, y: begin.y, f: fBegin });
     dist[begin.x][begin.y] = 0;
     opened[begin.x][begin.y] = true;
 
@@ -40,7 +40,7 @@ export default class AStar extends PathFinder {
       }
 
       opened[currentX][currentY] = false;
-      pq.dequeue();
+      pq.deq();
 
       for (let i = 0; i < PathFinder.dx.length; i++) {
         const nextX = currentX + PathFinder.dx[i];
@@ -61,7 +61,7 @@ export default class AStar extends PathFinder {
           timeFactor++;
 
           if (opened[nextX][nextY] === false) {
-            pq.queue({ x: nextX, y: nextY, f: nextF });
+            pq.enq({ x: nextX, y: nextY, f: nextF });
             opened[nextX][nextY] = true;
           }
         }

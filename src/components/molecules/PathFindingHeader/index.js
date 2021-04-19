@@ -98,7 +98,6 @@ const PathFindingHeader = () => {
         <option value={BELLMAN_FORD}>Bellman-Ford</option>
         <option value={BFS}>0-1 BFS</option>
         <option value={DFS}>DFS</option>
-        <option value={A_STAR}>A*</option>
       </select>
       <select
         className="PathFindingHeader__Select PathFindingHeader__Item"

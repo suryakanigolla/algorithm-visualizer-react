@@ -10,7 +10,6 @@ import PathFinder from "./pathFinder";
 export default class Dijkstra extends PathFinder {
   constructor(args) {
     super(args);
-    // this.pq = new PriorityQueue<Object>({ comparator: (a, b) => a.d - b.d });
     this.pq = new PriorityQueue(function (a, b) {
       return a.d - b.d;
     });
