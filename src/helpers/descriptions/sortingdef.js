@@ -55,17 +55,6 @@ export const sortingdef = [
     },
   },
   {
-    name: "Quick Sort 3-Way Partitioning",
-    desc:
-      "Quick Sort exhibits poor performance on arrays that contain many repeated elements. This issue (Dutch national flag problem) can be solved by using an alternative linear-time partitioning routine that separates the values into three groups: values less than the pivot, values equal to the pivot, and values greater than the pivot. The values equal to the pivot are already sorted, so only the less-than and greater-than partitions need to be recursively sorted.",
-    performance: {
-      worst_case: "O(n^2)",
-      average_time: "O(nlog(n))",
-      best_time: "O(n)",
-      worst_space: "O(log(n))",
-    },
-  },
-  {
     name: "Heap Sort",
     desc:
       "Heap Sort can be thought of as an improved selection sort that uses the heap data structure rather than a linear-time search to find the maximum or minimum element. It is an in-place sorting algorithm that is not stable and has a somewhat slower running time than Quicksort in practice.",

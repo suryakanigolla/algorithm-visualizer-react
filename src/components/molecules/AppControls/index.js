@@ -29,7 +29,6 @@ const AppControls = ({
           <option value="Insertion Sort">Insertion Sort</option>
           <option value="Merge Sort">Merge Sort</option>
           <option value="Quick Sort">Quick Sort</option>
-          <option value="Quick Sort3">Quick Sort3</option>
           <option value="Heap Sort">Heap Sort</option>
           <option value="Shell Sort">Shell Sort</option>
         </select>
