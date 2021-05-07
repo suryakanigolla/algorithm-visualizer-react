@@ -7,7 +7,6 @@ import SelectionSort from "../../../helpers/algorithms/SelectionSort";
 import InsertionSort from "../../../helpers/algorithms/InsertionSort";
 import MergeSort from "../../../helpers/algorithms/MergeSort";
 import QuickSort from "../../../helpers/algorithms/QuickSort";
-import QuickSort3 from "../../../helpers/algorithms/QuickSort3";
 import HeapSort from "../../../helpers/algorithms/HeapSort";
 import ShellSort from "../../../helpers/algorithms/ShellSort";
 import { sortingdef } from "../../../helpers/descriptions/sortingdef";
@@ -60,7 +59,6 @@ class Sorting extends Component {
     "Insertion Sort": InsertionSort,
     "Merge Sort": MergeSort,
     "Quick Sort": QuickSort,
-    "Quick Sort 3": QuickSort3,
     "Heap Sort": HeapSort,
     "Shell Sort": ShellSort,
   };
